@@ -2,7 +2,7 @@
 import React from "react";
 import Product from "./Product";
 
-// Lista de productos con datos ficticios
+// Lista de productos disponibles en la tienda
 const products = [
   {
     image: "https://http2.mlstatic.com/D_NQ_NP_923016-MCO46801287829_072021-O.webp",
@@ -36,28 +36,15 @@ const products = [
   }
 ];
 
-// Componente que renderiza la lista de productos
+// Componente que muestra la lista de productos en la página principal
 const ProductList = () => {
   return (
-    <section style={styles.container}>
-      {/* Mapear la lista de productos y renderizar cada uno */}
+    <section className="product-list">
       {products.map((product, index) => (
         <Product key={index} {...product} />
       ))}
     </section>
   );
-};
-
-// Estilos para la lista de productos
-const styles = {
-  container: {
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
-    gap: "20px",
-    padding: "20px",
-    maxWidth: "1200px",
-    margin: "0 auto",
-  },
 };
 
 export default ProductList;
